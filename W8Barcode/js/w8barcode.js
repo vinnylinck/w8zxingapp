@@ -1,4 +1,5 @@
-﻿// Using
+﻿
+// Using
 var Capture = Windows.Media.Capture,
 
 
@@ -21,11 +22,14 @@ function render() {
 
 // show alert message
 function showMsg(m) {
-    var msg = new Windows.UI.Popups.MessageDialog(m),
-        lbl = document.getElementById("label");
+    var msg = new Windows.UI.Popups.MessageDialog(m);
 
-    lbl.innerHTML = m;
-    //msg.showAsync();
+    msg.commands.append(new Windows.UI.Popups.UICommand("OK", function () {
+        previewPanel.play();
+        renderLock = false;
+    }));
+
+    msg.showAsync();
 }
 
 // decoding barcode
@@ -35,12 +39,11 @@ function readCode(decoder, pixels, format) {
     if (result) {
         console.log("Found: ", result.text);
         showMsg(result.text);
-        //previewPanel.pause();
+        previewPanel.pause();
     } else {
         console.log("Sampling...");
+        renderLock = false;
     }
-
-    renderLock = false;
 }
 
 // decode bitmap stream

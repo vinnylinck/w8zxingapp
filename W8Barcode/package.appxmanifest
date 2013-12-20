@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="0f07846b-fb37-40c0-9752-0b675cc2343d" Version="1.0.0.2" Publisher="CN=viniciusl" />
+  <Identity Name="0f07846b-fb37-40c0-9752-0b675cc2343d" Version="1.0.0.3" Publisher="CN=viniciusl" />
   <Properties>
     <DisplayName>W8Barcode</DisplayName>
     <PublisherDisplayName>viniciusl</PublisherDisplayName>
